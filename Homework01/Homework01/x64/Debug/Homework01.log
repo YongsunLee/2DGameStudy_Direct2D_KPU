@@ -1,0 +1,15 @@
+﻿  stdafx.cpp
+  IndRes.cpp
+  Homework01.cpp
+d:\job\kpu\3 - 2\study\direct2d\2d_gamestudy\homework01\homework01\homework01.cpp(153): warning C4189: 'hdc': 지역 변수가 초기화되었으나 참조되지 않았습니다.
+  GameObject.cpp
+d:\job\kpu\3 - 2\study\direct2d\2d_gamestudy\homework01\homework01\gameobject.cpp(38): warning C4100: 'fAngle': 참조되지 않은 정식 매개 변수입니다.
+d:\job\kpu\3 - 2\study\direct2d\2d_gamestudy\homework01\homework01\gameobject.cpp(38): warning C4100: 'v3Axis': 참조되지 않은 정식 매개 변수입니다.
+  GameFramework.cpp
+d:\job\kpu\3 - 2\study\direct2d\2d_gamestudy\homework01\homework01\gameframework.cpp(85): warning C4100: 'lParam': 참조되지 않은 정식 매개 변수입니다.
+d:\job\kpu\3 - 2\study\direct2d\2d_gamestudy\homework01\homework01\gameframework.cpp(85): warning C4100: 'wParam': 참조되지 않은 정식 매개 변수입니다.
+d:\job\kpu\3 - 2\study\direct2d\2d_gamestudy\homework01\homework01\gameframework.cpp(107): warning C4100: 'lParam': 참조되지 않은 정식 매개 변수입니다.
+d:\job\kpu\3 - 2\study\direct2d\2d_gamestudy\homework01\homework01\gameframework.cpp(107): warning C4100: 'hWnd': 참조되지 않은 정식 매개 변수입니다.
+  코드를 생성하고 있습니다...
+  Homework01.vcxproj -> D:\Job\KPU\3 - 2\Study\Direct2D\2D_GameStudy\Homework01\x64\Debug\Homework01.exe
+  Homework01.vcxproj -> D:\Job\KPU\3 - 2\Study\Direct2D\2D_GameStudy\Homework01\x64\Debug\Homework01.pdb (Partial PDB)
