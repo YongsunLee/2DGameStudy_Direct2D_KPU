@@ -29,6 +29,11 @@
 #include <string>
 using namespace std;
 
+// 파일 시스템 전체를 관리
+// C++ 17 표준
+#include <filesystem>
+using namespace std::experimental::filesystem;
+
 // ComPtr
 #include <wrl.h>
 using namespace Microsoft::WRL;

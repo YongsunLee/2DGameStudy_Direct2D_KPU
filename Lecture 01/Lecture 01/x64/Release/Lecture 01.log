@@ -3,8 +3,8 @@
   Lecture 01.cpp
 Lecture 01.cpp(138): warning C4189: 'hdc': 지역 변수가 초기화되었으나 참조되지 않았습니다.
   코드를 생성하고 있습니다.
-  54 of 55 functions (98.2%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    1 functions had inline decision re-evaluated but remain unchanged
+  55 of 55 functions (100.0%) were compiled, the rest were copied from previous compilation.
+    4 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
   코드를 생성했습니다.
-  Lecture 01.vcxproj -> D:\Job\KPU\3 - 2\Study\Direct2D\Lecture 01\x64\Release\Lecture 01.exe
+  Lecture 01.vcxproj -> D:\Job\KPU\3 - 2\Study\Direct2D\2D_GameStudy\Lecture 01\x64\Release\Lecture 01.exe

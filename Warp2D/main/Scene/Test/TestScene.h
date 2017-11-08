@@ -3,6 +3,7 @@
 #include "Camera/Camera.h"
 #include "Scene/Scene.h"
 
+class CItem;
 class CTestScene :
 	public CScene
 {
@@ -28,5 +29,8 @@ private:
 	// Camera
 	//D2D_MATRIX_3X2_F				m_mtxLocal			{ Matrix3x2F::Identity() };
 	CCamera							m_Camera;
+
+	unique_ptr<CItem>				m_upItem;
+
 };
 

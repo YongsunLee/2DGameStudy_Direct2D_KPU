@@ -3,6 +3,8 @@
 #include "Framework/Warp2DFramework.h"
 #include "Framework/IndRes/IndRes.h"
 
+#include "Object\item\Item.h"
+
 #include "TestScene.h"
 
 
@@ -81,16 +83,16 @@ bool CTestScene::OnProcessingKeyboardMessage(HWND hWnd, UINT nMessageID, WPARAM 
 		switch (wParam)
 		{
 		case 'A':
-			m_ptPlayer.x -= 10.f;
+			m_ptPlayer.x -= 20.f;
 			break;
 		case 'W':
-			m_ptPlayer.y -= 10.f;
+			m_ptPlayer.y -= 20.f;
 			break;
 		case 'D':
-			m_ptPlayer.x += 10.f;
+			m_ptPlayer.x += 20.f;
 			break;
 		case 'S':
-			m_ptPlayer.y += 10.f;
+			m_ptPlayer.y += 20.f;
 			break;
 		case 'Z':
 			m_Camera.Scale(m_Camera.GetScale() * 2.f);
@@ -157,8 +159,12 @@ bool CTestScene::OnCreate(wstring && tag, CWarp2DFramework * pFramework)
 	*/
 	
 	m_Camera.SetPosition(m_ptPlayer);
-	m_Camera.SetAnchor(Point2F(-0.5f, -0.5f));		// 조금 고치기
+	m_Camera.SetAnchor(Point2F(0.0f, 0.0f));		// 조금 고치기 (11/6 완료)
 	
+	// Item
+	m_upItem = make_unique<CItem>(Point2F(100,100), RectF(-10,-10,10,10));
+	m_upItem->RegisterImage(m_pIndRes.get(), rendertarget.Get(), "Buckler.png");
+
 	return true;
 }
 
@@ -174,7 +180,8 @@ void CTestScene::Draw(ID2D1HwndRenderTarget * pd2dRenderTarget)
 
 	pd2dRenderTarget->FillRectangle(RectF(-10, -10, 10, 10) + m_ptPlayer, m_pd2dsbrDefault.Get());
 
-
 	pd2dRenderTarget->DrawRectangle(RectF(50, 50, 70, 70), m_pd2dsbrDefault.Get());
+
+	m_upItem->Draw(pd2dRenderTarget);
 
 }

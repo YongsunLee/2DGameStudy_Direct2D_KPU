@@ -30,11 +30,13 @@ void CCamera::SetMatrix()
 
 D2D1_POINT_2F CCamera::GetCameraPosition()
 {
-	return D2D1_POINT_2F
-	{
-	  Interpolation(m_d2dptPosition.x - m_d2dptClientSize.x * 2.f, m_d2dptPosition.x, m_d2dptAnchor.x * -0.5f + 0.5f)
-	, Interpolation(m_d2dptPosition.y - m_d2dptClientSize.y * 2.f, m_d2dptPosition.y, m_d2dptAnchor.y * -0.5f + 0.5f)
-	};
+	auto fScaleFacotr = 1.f / m_fScale * 0.5f;
+
+	// 다이렉트 2D에서 지원해준 생성자 함수이니까 이렇게 사용하자 :: 표준
+	return Point2F(
+		Interpolation(m_d2dptPosition.x - m_d2dptClientSize.x * fScaleFacotr, m_d2dptPosition.x + m_d2dptClientSize.x * fScaleFacotr, -m_d2dptAnchor.x * 0.5f),
+		Interpolation(m_d2dptPosition.y - m_d2dptClientSize.y * fScaleFacotr, m_d2dptPosition.y + m_d2dptClientSize.y * fScaleFacotr, -m_d2dptAnchor.y * 0.5f)
+	);
 }
 
 D2D_MATRIX_3X2_F CCamera::RegenerateViewMatrix()
