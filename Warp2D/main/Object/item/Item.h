@@ -24,7 +24,7 @@ public:
 	virtual void RegisterImage(const ComPtr<ID2D1Bitmap1>& bmp);
 	virtual void RegisterImage(ComPtr<ID2D1Bitmap1>&& bmp) noexcept;
 
-
+	ID2D1Bitmap1* GetBitmap() const { return m_bmpImage.Get(); }
 protected:
 	ComPtr<ID2D1Bitmap1> m_bmpImage;
 };

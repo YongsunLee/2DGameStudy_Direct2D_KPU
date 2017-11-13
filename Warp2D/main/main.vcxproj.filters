@@ -40,6 +40,12 @@
     <Filter Include="Object\Item">
       <UniqueIdentifier>{065b32a0-bb63-451b-9da7-2e174c5b6357}</UniqueIdentifier>
     </Filter>
+    <Filter Include="UI">
+      <UniqueIdentifier>{bb8a2e59-e4a2-4a44-acd9-93b3cdee503a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI\Inventory">
+      <UniqueIdentifier>{14228a98-5f08-4ddf-addd-21cd90f2b0fa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -53,9 +59,6 @@
     </ClInclude>
     <ClInclude Include="main.h">
       <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="D2DLoadBitmap.h">
-      <Filter>pch</Filter>
     </ClInclude>
     <ClInclude Include="Framework\Warp2DFramework.h">
       <Filter>Framework</Filter>
@@ -93,6 +96,15 @@
     <ClInclude Include="Object\item\Item.h">
       <Filter>Object\Item</Filter>
     </ClInclude>
+    <ClInclude Include="pch\D2DLoadBitmap.h">
+      <Filter>pch</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\Inventory\Inventory.h">
+      <Filter>UI\Inventory</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\UIbase.h">
+      <Filter>UI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -123,7 +135,13 @@
       <Filter>Object</Filter>
     </ClCompile>
     <ClCompile Include="Object\item\Item.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>Object\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\Inventory\Inventory.cpp">
+      <Filter>UI\Inventory</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\UIbase.cpp">
+      <Filter>UI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

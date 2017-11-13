@@ -18,6 +18,8 @@ public:
 	virtual void Update(float fTimeElapsed) = 0;
 	virtual void Draw(ID2D1HwndRenderTarget * pd2dRenderTarget) = 0;
 
+	CWarp2DFramework* Framework() const { return m_pFramework; }
+
 	bool FindByTag(const wstring& Tag) const { return Tag == m_strTag; }
 
 	const wstring& Tag() const { return m_strTag; }

@@ -2,8 +2,11 @@
 
 #include "Camera/Camera.h"
 #include "Scene/Scene.h"
+#include "UI\Inventory\Inventory.h"
 
 class CItem;
+class CUIInventory;
+
 class CTestScene :
 	public CScene
 {
@@ -31,6 +34,8 @@ private:
 	CCamera							m_Camera;
 
 	unique_ptr<CItem>				m_upItem;
+
+	CUIInventory					m_uiInventory;
 
 };
 

@@ -1,10 +1,7 @@
 #include "stdafx.h"
-
 #include "Framework/Warp2DFramework.h"
 #include "Framework/IndRes/IndRes.h"
-
 #include "Object\item\Item.h"
-
 #include "TestScene.h"
 
 
@@ -100,7 +97,12 @@ bool CTestScene::OnProcessingKeyboardMessage(HWND hWnd, UINT nMessageID, WPARAM 
 		case 'X':
 			m_Camera.Scale(m_Camera.GetScale() * 0.5f);
 			break;
-
+		case 'G':
+			m_uiInventory.GetItem(m_upItem.get());
+			break;
+		case 'H':
+			m_uiInventory.GetItem(nullptr);
+			break;
 			// 프레임 워크 단에서 동작하기 위해서는 false
 		default:
 			return false;
@@ -163,7 +165,10 @@ bool CTestScene::OnCreate(wstring && tag, CWarp2DFramework * pFramework)
 	
 	// Item
 	m_upItem = make_unique<CItem>(Point2F(100,100), RectF(-10,-10,10,10));
-	m_upItem->RegisterImage(m_pIndRes.get(), rendertarget.Get(), "Buckler.png");
+	m_upItem->RegisterImage(m_pIndRes.get(), rendertarget.Get(), "Assets/Icon/Buckler.png");
+
+	// Inventory
+	m_uiInventory.BuildObject(this);
 
 	return true;
 }
@@ -171,6 +176,7 @@ bool CTestScene::OnCreate(wstring && tag, CWarp2DFramework * pFramework)
 void CTestScene::Update(float fTimeElapsed)
 {
 	m_Camera.SetPosition(m_ptPlayer);
+	m_uiInventory.Update(fTimeElapsed);
 }
 
 void CTestScene::Draw(ID2D1HwndRenderTarget * pd2dRenderTarget)
@@ -184,4 +190,5 @@ void CTestScene::Draw(ID2D1HwndRenderTarget * pd2dRenderTarget)
 
 	m_upItem->Draw(pd2dRenderTarget);
 
+	m_uiInventory.Draw(pd2dRenderTarget);
 }
