@@ -11,6 +11,37 @@ CUIbase::~CUIbase()
 {
 }
 
+bool CUIbase::OnProcessingKeyboardMessage(HWND hWnd, UINT nMessageID, WPARAM wParam, LPARAM lParam)
+{
+	switch (nMessageID)
+	{
+	case WM_KEYDOWN:
+		break;
+	default:
+		return true;
+	}
+	return(true);
+}
+
+bool CUIbase::OnProcessingMouseMessage(HWND hWnd, UINT nMessageID, WPARAM wParam, LPARAM lParam)
+{
+	switch (nMessageID)
+	{
+	case WM_LBUTTONDOWN:	break;
+	case WM_MBUTTONDOWN:	break;
+	case WM_RBUTTONDOWN:	break;
+	case WM_MOUSEMOVE:		break;
+	case WM_LBUTTONUP:		break;
+	case WM_MBUTTONUP:		break;
+	case WM_RBUTTONUP:		break;
+	case WM_MOUSEWHEEL:		break;
+	default:
+		return false;
+	}
+
+	return(true);
+}
+
 void CUIbase::Draw(ID2D1HwndRenderTarget * renderTarget)
 {
 	// MergeRect :: rect 2개를 받아서 합치는 함수 by 도율 선배님

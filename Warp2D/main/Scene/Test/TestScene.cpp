@@ -4,6 +4,7 @@
 #include "Object\item\Item.h"
 #include "TestScene.h"
 
+#define GRIDSIZE 20
 
 CTestScene::CTestScene()
 {
@@ -126,8 +127,9 @@ bool CTestScene::OnCreate(wstring && tag, CWarp2DFramework * pFramework)
 
 	auto rendertarget = pFramework->GetRenderTarget();
 
-	rendertarget->CreateSolidColorBrush(ColorF{ ColorF::Crimson }, &m_pd2dsbrDefault);
-	
+	rendertarget->CreateSolidColorBrush(ColorF{ ColorF::Red }, &m_pd2dsbrDefault);
+	rendertarget->CreateSolidColorBrush(ColorF{ ColorF::GreenYellow }, &m_pd2dGridBrush);
+
 	/*
 	auto dwFactoy = m_pIndRes->dwFactory();
 
@@ -186,7 +188,11 @@ void CTestScene::Draw(ID2D1HwndRenderTarget * pd2dRenderTarget)
 
 	pd2dRenderTarget->FillRectangle(RectF(-10, -10, 10, 10) + m_ptPlayer, m_pd2dsbrDefault.Get());
 
-	pd2dRenderTarget->DrawRectangle(RectF(50, 50, 70, 70), m_pd2dsbrDefault.Get());
+	for (int x = 0; x < 50; ++x) {
+		for (int y = 0; y < 50; ++y) {
+			pd2dRenderTarget->DrawRectangle(RectF(-510 + (x * GRIDSIZE), -510 + (y * GRIDSIZE), -490 + (x * GRIDSIZE), -490 + (y * GRIDSIZE)), m_pd2dGridBrush.Get());
+		}
+	}
 
 	m_upItem->Draw(pd2dRenderTarget);
 

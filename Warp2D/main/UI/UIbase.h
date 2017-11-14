@@ -8,6 +8,9 @@ public:
 	CUIbase();
 	virtual ~CUIbase();
 
+	virtual bool OnProcessingKeyboardMessage(HWND hWnd, UINT nMessageID, WPARAM wParam, LPARAM lParam);
+	virtual bool OnProcessingMouseMessage(HWND hWnd, UINT nMessageID, WPARAM wParam, LPARAM lParam);
+
 	virtual void Draw(ID2D1HwndRenderTarget *renderTarget);
 
 	virtual void DrawClient(ID2D1HwndRenderTarget *renderTarget);

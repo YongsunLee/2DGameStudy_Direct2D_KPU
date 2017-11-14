@@ -26,16 +26,22 @@ public:
 
 private:
 
-	ComPtr<ID2D1SolidColorBrush>	m_pd2dsbrDefault	{ nullptr }	;
+	ComPtr<ID2D1SolidColorBrush>	m_pd2dsbrDefault{ nullptr };
+	ComPtr<ID2D1SolidColorBrush>	m_pd2dGridBrush{ nullptr };
 	D2D_POINT_2F					m_ptPlayer{ 0, 0 };
 
 	// Camera
 	//D2D_MATRIX_3X2_F				m_mtxLocal			{ Matrix3x2F::Identity() };
 	CCamera							m_Camera;
 
+	// Item
 	unique_ptr<CItem>				m_upItem;
 
+	// Inventory
 	CUIInventory					m_uiInventory;
+
+	// Player
+	// CPlayer						m_Player;
 
 };
 

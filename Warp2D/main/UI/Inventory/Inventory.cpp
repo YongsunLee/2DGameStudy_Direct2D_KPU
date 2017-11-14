@@ -14,14 +14,47 @@ CUIInventory::~CUIInventory()
 {
 }
 
+bool CUIInventory::OnProcessingKeyboardMessage(HWND hWnd, UINT nMessageID, WPARAM wParam, LPARAM lParam)
+{
+	switch (nMessageID)
+	{
+	case WM_KEYDOWN:
+		break;
+	default:
+		return true;
+	}
+	return(true);
+}
+
+bool CUIInventory::OnProcessingMouseMessage(HWND hWnd, UINT nMessageID, WPARAM wParam, LPARAM lParam)
+{
+	switch (nMessageID)
+	{
+	case WM_LBUTTONDOWN:	break;
+	case WM_MBUTTONDOWN:	break;
+	case WM_RBUTTONDOWN:	break;
+	case WM_MOUSEMOVE:		break;
+	case WM_LBUTTONUP:		break;
+	case WM_MBUTTONUP:		break;
+	case WM_RBUTTONUP:		break;
+	case WM_MOUSEWHEEL:		break;
+	default:
+		return false;
+	}
+
+	return(true);
+}
+
 void CUIInventory::DrawClient(ID2D1HwndRenderTarget * renderTarget)
 {
 	renderTarget->FillRectangle(m_rcClient, m_hbrushClient.Get());
 	
-	renderTarget->DrawBitmap(
-		m_bmpFrame.Get()
-		, m_rcItem
-	);
+	for (int i = 0; i < 2; ++i) {
+		renderTarget->DrawBitmap(
+			m_bmpFrame[i].Get()
+			, m_rcItem
+		);
+	}
 
 	if (m_pItem) {
 		renderTarget->DrawBitmap(
@@ -58,13 +91,16 @@ void CUIInventory::BuildObject(CScene * scene)
 	m_ptOrigin = Point2F(560, 20);
 
 	// Item
-	m_rcItem = RectF(10, 10, 50, 50);
-	LoadImageFromFile(
-		  indres->wicFactory()
-		, renderTarget.Get()
-		, L"Assets/Icon/Icon Frame.png"
-		, &m_bmpFrame
-	);
+	for (int i = 0; i < 2; ++i) {
+		m_rcItem = RectF(10, 10 + (i * 50), 50, 50 + (i * 50));
+		LoadImageFromFile(
+			indres->wicFactory()
+			, renderTarget.Get()
+			, L"Assets/Icon/Icon Frame.png"
+			, &m_bmpFrame[i]
+		);
+	}
+	
 
 	// Brush 초기화 및 색상
 	renderTarget->CreateSolidColorBrush(ColorF{ ColorF::GreenYellow }, &m_hbrushCaption);

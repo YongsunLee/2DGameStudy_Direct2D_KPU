@@ -46,6 +46,9 @@
     <Filter Include="UI\Inventory">
       <UniqueIdentifier>{14228a98-5f08-4ddf-addd-21cd90f2b0fa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Object\Player">
+      <UniqueIdentifier>{7649680b-4e89-499b-85f6-a5b64cf978ba}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
