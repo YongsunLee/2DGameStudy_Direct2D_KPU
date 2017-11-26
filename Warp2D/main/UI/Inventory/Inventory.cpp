@@ -100,7 +100,6 @@ void CUIInventory::BuildObject(CScene * scene)
 			, &m_bmpFrame[i]
 		);
 	}
-	
 
 	// Brush 초기화 및 색상
 	renderTarget->CreateSolidColorBrush(ColorF{ ColorF::GreenYellow }, &m_hbrushCaption);
