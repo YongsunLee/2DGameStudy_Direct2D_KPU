@@ -217,4 +217,5 @@ void CTestScene::Draw(ID2D1HwndRenderTarget * pd2dRenderTarget)
 
 	// UI
 	m_uiInventory.Draw(pd2dRenderTarget);
+	//m_uiEquipment.Draw(pd2dRenderTarget);
 }

@@ -36,7 +36,6 @@ void CUIInventory::DrawClient(ID2D1HwndRenderTarget * pd2dRenderTarget)
 					, rc
 				);
 			}
-
 		}
 }
 
@@ -60,7 +59,7 @@ void CUIInventory::BuildObject(CScene * scene)
 	m_rcCaption = RectF(0, 0, 200, 20);
 	m_rcClient = RectF(0, 0, 200, 220);
 
-	m_ptOrigin = Point2F(560, 20);
+	m_ptOrigin = Point2F(560, 40);
 
 	m_rcItem = RectF(0, 0, 40, 40);
 

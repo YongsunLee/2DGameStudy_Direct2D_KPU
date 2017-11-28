@@ -52,6 +52,9 @@
     <Filter Include="UI\Status">
       <UniqueIdentifier>{66b4c570-e02b-47ef-8d8b-80f3095f2cef}</UniqueIdentifier>
     </Filter>
+    <Filter Include="UI\Equipment">
+      <UniqueIdentifier>{04736b88-cdf3-4dd5-9f8f-5744d8789c4f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -114,6 +117,9 @@
     <ClInclude Include="Object\Player\Player.h">
       <Filter>Object\Player</Filter>
     </ClInclude>
+    <ClInclude Include="UI\Equipment\Equipment.h">
+      <Filter>UI\Equipment</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -154,6 +160,9 @@
     </ClCompile>
     <ClCompile Include="Object\Player\Player.cpp">
       <Filter>Object\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\Equipment\Equipment.cpp">
+      <Filter>UI\Equipment</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

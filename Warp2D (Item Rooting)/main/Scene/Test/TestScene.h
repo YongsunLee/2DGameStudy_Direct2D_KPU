@@ -5,6 +5,7 @@
 #include "Object/Player/Player.h"
 #include "Object/Item/Item.h"
 #include "UI/Inventory/Inventory.h"
+#include "UI\Equipment\Equipment.h"
 class CTestScene :
 	public CScene
 {
@@ -36,4 +37,5 @@ private:
 	list<unique_ptr<CItem>>			m_lstTrap;
 	
 	CUIInventory					m_uiInventory;
+	CEquipment						m_uiEquipment;
 };
